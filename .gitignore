@@ -1,0 +1,6 @@
+.claude/
+docs/
+前端页面参考图.jpg
+*.png
+*.jpg
+!favicon.*

@@ -1,0 +1,1612 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片格式在线转换 - JPG/PNG/WebP/AVIF/ICO/HEIC互转 | 免费本地转换</title>
+    <meta name="description" content="免费的在线图片格式转换工具，支持JPG、PNG、WebP、AVIF、ICO、HEIC格式互转。纯浏览器本地转换，不上传服务器，保护隐私。支持批量转换、Base64互转。">
+    <meta name="keywords" content="图片格式转换,在线图片转换,PNG转JPG,WebP转换,AVIF转换,ICO转换,HEIC转JPG,苹果照片转JPG,Base64转图片,批量图片转换,免费图片转换器">
+    <meta name="author" content="ImageConverter">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://image-converter.pages.dev/">
+    <meta property="og:title" content="图片格式在线转换 - JPG/PNG/WebP/AVIF/ICO/HEIC互转">
+    <meta property="og:description" content="免费在线图片格式转换，纯浏览器本地处理，不上传服务器。支持批量转换、Base64互转。">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "图片格式在线转换工具",
+        "url": "https://image-converter.pages.dev/",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Any",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "description": "免费在线图片格式转换工具，支持JPG/PNG/WebP/AVIF/ICO/HEIC互转，纯浏览器本地处理。",
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"},
+        "inLanguage": "zh-CN"
+    }
+    </script>
+    <meta name="theme-color" content="#667eea">
+    <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIuWbvueJh+agvOW8j+i9rOaNouW3peWFtyIsCiAgInNob3J0X25hbWUiOiAi5Zu+54mH6L2s5o2iIiwKICAic3RhcnRfdXJsIjogIi4vIiwKICAiZGlzcGxheSI6ICJzdGFuZGFsb25lIiwKICAiYmFja2dyb3VuZF9jb2xvciI6ICIjNjY3ZWVhIiwKICAidGhlbWVfY29sb3IiOiAiIzY2N2VlYSIsCiAgImljb25zIjogWwogICAgewogICAgICAic3JjIjogImRhdGE6aW1hZ2Uvc3ZnK3htbCwlM0Nzdmcgd2lkdGg9JzY0JyBoZWlnaHQ9JzY0JyB2aWV3Qm94PScwIDAgNjQgNjQnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyclM0UlM0NyZWN0IHdpZHRoPSc2NCcgaGVpZ2h0PSc2NCcgcng9JzE2JyBmaWxsPSclMjM2NjdlZWEnLyUzRSUzQ3RleHQgeD0nMzInIHk9JzQwJyB0ZXh0LWFuY2hvcj0nbWlkZGxlJyBmaWxsPSd3aGl0ZScgZm9udC1mYW1pbHk9J0FyaWFsJyBmb250LXNpemU9JzI4Jz7lm748L3RleHQlM0UlM0Mvc3ZnJTNFIiwKICAgICAgInNpemVzIjogIjY0eDY0IiwKICAgICAgInR5cGUiOiAiaW1hZ2Uvc3ZnK3htbCIKICAgIH0KICBdCn0=">
+    <link rel="preconnect" href="https://api.iconify.design">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gradient-start: #667eea;
+            --gradient-end: #764ba2;
+            --primary: 247 76% 66%;
+            --primary-foreground: 0 0% 100%;
+            --bg: 250 40% 98%;
+            --card: 0 0% 100%;
+            --card-foreground: 250 30% 12%;
+            --foreground: 250 30% 12%;
+            --muted: 250 20% 95%;
+            --muted-foreground: 250 10% 45%;
+            --border: 250 20% 88%;
+            --input: 250 20% 88%;
+            --ring: 247 76% 66%;
+            --radius: 0.75rem;
+            --success: 160 84% 39%;
+            --success-foreground: 0 0% 100%;
+            --destructive: 0 84% 60%;
+            --destructive-foreground: 0 0% 100%;
+            --accent: 247 76% 95%;
+            --accent-foreground: 247 50% 25%;
+            --shadow-sm: 0 1px 2px rgba(102,126,234,0.08);
+            --shadow: 0 4px 16px rgba(102,126,234,0.12);
+            --shadow-lg: 0 12px 32px rgba(102,126,234,0.16);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: "Inter", "Noto Sans SC", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: linear-gradient(135deg, #667eea08 0%, #764ba208 50%, #667eea08 100%);
+            color: hsl(var(--foreground));
+            min-height: 100vh;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ===== Privacy Banner ===== */
+        .privacy-banner {
+            position: sticky; top: 0; z-index: 100;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: #fff; text-align: center;
+            padding: 0.5rem 1rem; font-size: 0.8125rem; font-weight: 500;
+            display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        .privacy-banner iconify-icon { flex-shrink: 0; }
+
+        /* ===== Layout ===== */
+        .page-wrap {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 1.5rem;
+            padding: 1.5rem;
+        }
+        @media (max-width: 1024px) {
+            .page-wrap { grid-template-columns: 1fr; }
+            .ad-sidebar { display: none; }
+        }
+
+        .main-col { min-width: 0; }
+
+        /* ===== Ad Sidebar ===== */
+        .ad-sidebar { position: relative; }
+        .ad-sidebar-inner {
+            position: sticky; top: 5rem;
+            display: flex; flex-direction: column; gap: 1rem;
+        }
+        .ad-unit {
+            background: hsl(var(--card)); border: 1px solid hsl(var(--border));
+            border-radius: var(--radius); overflow: hidden;
+            display: flex; align-items: center; justify-content: center;
+            min-height: 250px; color: hsl(var(--muted-foreground)); font-size: 0.75rem;
+            text-align: center; padding: 1rem;
+        }
+        .ad-unit.ad-bottom { min-height: 90px; }
+        .ad-label {
+            position: absolute; top: 0.25rem; left: 0.5rem;
+            font-size: 0.625rem; color: hsl(var(--muted-foreground)); opacity: 0.6;
+            text-transform: uppercase; letter-spacing: 0.05em;
+        }
+
+        /* ===== Hero ===== */
+        .hero {
+            text-align: center; padding: 2rem 1rem 1.5rem;
+        }
+        .hero-icon {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 64px; height: 64px; border-radius: 16px;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: #fff; margin-bottom: 1rem; box-shadow: var(--shadow);
+        }
+        .hero h1 {
+            font-size: 1.75rem; font-weight: 700; letter-spacing: -0.025em;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text; margin-bottom: 0.5rem;
+        }
+        .hero p { color: hsl(var(--muted-foreground)); max-width: 480px; margin: 0 auto; font-size: 0.9375rem; }
+        .badge-row { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-top: 1rem; }
+        .badge {
+            display: inline-flex; align-items: center; gap: 0.25rem;
+            border-radius: 9999px; padding: 0.25rem 0.75rem;
+            font-size: 0.75rem; font-weight: 500;
+            background: hsl(var(--accent)); color: hsl(var(--accent-foreground));
+        }
+
+        /* ===== Card ===== */
+        .card {
+            background: hsl(var(--card)); border: 1px solid hsl(var(--border));
+            border-radius: calc(var(--radius) + 4px); box-shadow: var(--shadow-sm);
+            margin-bottom: 1rem; overflow: hidden;
+        }
+        .card-header {
+            padding: 1.25rem 1.5rem 0;
+            display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem;
+        }
+        .card-title {
+            font-size: 1.0625rem; font-weight: 600;
+            display: inline-flex; align-items: center; gap: 0.5rem;
+        }
+        .card-title iconify-icon { color: hsl(var(--primary)); flex-shrink: 0; }
+        .card-description { font-size: 0.8125rem; color: hsl(var(--muted-foreground)); margin-top: 0.25rem; }
+        .card-content { padding: 1.25rem 1.5rem; }
+
+        /* ===== Drop Zone ===== */
+        .drop-zone {
+            border: 2px dashed hsl(var(--border));
+            border-radius: var(--radius); padding: 2.5rem 1.5rem;
+            text-align: center; cursor: pointer;
+            transition: all 0.2s ease; position: relative;
+        }
+        .drop-zone:hover, .drop-zone.dragover {
+            border-color: hsl(var(--primary));
+            background: hsl(var(--accent));
+        }
+        .drop-zone-icon { color: hsl(var(--muted-foreground)); margin-bottom: 0.75rem; }
+        .drop-zone p { color: hsl(var(--muted-foreground)); font-size: 0.875rem; }
+        .drop-zone p strong { color: hsl(var(--foreground)); }
+        .drop-zone .hint { font-size: 0.75rem; margin-top: 0.5rem; }
+        .drop-zone.has-images { display: none; }
+
+        /* ===== Format Pills ===== */
+        .format-section { margin-top: 1rem; }
+        .format-section-label {
+            font-size: 0.8125rem; font-weight: 600; margin-bottom: 0.5rem;
+            display: flex; align-items: center; gap: 0.375rem;
+        }
+        .format-pills {
+            display: flex; flex-wrap: wrap; gap: 0.5rem;
+        }
+        .format-pill {
+            display: inline-flex; align-items: center; gap: 0.375rem;
+            padding: 0.5rem 1rem; border-radius: 9999px;
+            border: 1.5px solid hsl(var(--border));
+            background: hsl(var(--card)); color: hsl(var(--foreground));
+            font-size: 0.875rem; font-weight: 500; font-family: inherit;
+            cursor: pointer; transition: all 0.15s ease;
+            white-space: nowrap;
+        }
+        .format-pill:hover { border-color: hsl(var(--primary)); background: hsl(var(--accent)); }
+        .format-pill.active {
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: #fff; border-color: transparent;
+            box-shadow: var(--shadow);
+        }
+        .format-pill.disabled {
+            opacity: 0.4; cursor: not-allowed; pointer-events: none;
+        }
+
+        /* ===== Quality Slider ===== */
+        .quality-row {
+            display: flex; align-items: center; gap: 0.75rem; margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        .quality-label { font-size: 0.8125rem; font-weight: 500; white-space: nowrap; }
+
+        .custom-slider { flex: 1; min-width: 120px; display: flex; align-items: center; min-height: 2.5rem; padding: 0 0.5rem; touch-action: none; }
+        .custom-slider-track { position: relative; width: 100%; height: 0.375rem; background: hsl(var(--muted)); border-radius: 9999px; cursor: pointer; }
+        .custom-slider-range { position: absolute; left: 0; top: 0; height: 100%; border-radius: 9999px; background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end)); pointer-events: none; }
+        .custom-slider-thumb { position: absolute; top: 50%; width: 1.125rem; height: 1.125rem; transform: translate(-50%, -50%); border-radius: 9999px; border: 2px solid hsl(var(--primary)); background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15); cursor: grab; transition: box-shadow 0.15s; }
+        .custom-slider-thumb:hover { box-shadow: 0 0 0 4px hsla(var(--primary) / 0.12); }
+        .custom-slider.dragging .custom-slider-thumb { cursor: grabbing; box-shadow: 0 0 0 6px hsla(var(--primary) / 0.18); }
+
+        .quality-value { min-width: 2.5rem; text-align: right; font-size: 0.875rem; font-weight: 500; color: hsl(var(--muted-foreground)); }
+        .file-size-hint { font-size: 0.75rem; color: hsl(var(--muted-foreground)); margin-top: 0.375rem; text-align: right; }
+
+        /* ===== Buttons ===== */
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+            white-space: nowrap; border-radius: var(--radius); font-size: 0.875rem;
+            font-weight: 500; font-family: inherit; height: 2.5rem; padding: 0 1.25rem;
+            border: 1px solid transparent; cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .btn:disabled { opacity: 0.5; pointer-events: none; }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: #fff; box-shadow: var(--shadow-sm);
+        }
+        .btn-primary:hover:not(:disabled) {
+            box-shadow: var(--shadow); transform: translateY(-1px);
+        }
+        .btn-success { background: hsl(var(--success)); color: #fff; }
+        .btn-success:hover:not(:disabled) { opacity: 0.9; }
+        .btn-outline { background: hsl(var(--card)); border-color: hsl(var(--border)); color: hsl(var(--foreground)); }
+        .btn-outline:hover:not(:disabled) { background: hsl(var(--accent)); }
+        .btn-sm { height: 2rem; padding: 0 0.75rem; font-size: 0.8125rem; }
+        .btn-lg { height: 3rem; padding: 0 2rem; font-size: 1rem; }
+        .btn-block { width: 100%; }
+
+        /* ===== Actions Bar ===== */
+        .actions-bar {
+            display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem;
+        }
+        .actions-bar .btn-primary { flex: 1; min-width: 10rem; }
+
+        /* ===== Preview Gallery ===== */
+        .preview {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 0.75rem; margin-top: 1rem;
+        }
+        .preview-item {
+            position: relative; border: 1px solid hsl(var(--border));
+            border-radius: var(--radius); overflow: hidden;
+            background: hsl(var(--muted) / 0.3);
+        }
+        .preview-item img {
+            width: 100%; aspect-ratio: 1; object-fit: cover; display: block; cursor: zoom-in;
+        }
+        .preview-meta { padding: 0.5rem 0.625rem; border-top: 1px solid hsl(var(--border)); background: hsl(var(--card)); }
+        .preview-name { font-size: 0.6875rem; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 0.25rem; }
+        .preview-size { font-size: 0.6875rem; color: hsl(var(--muted-foreground)); }
+        .preview-size.converted { color: hsl(var(--primary)); font-weight: 500; }
+        .preview-actions {
+            position: absolute; top: 0.375rem; right: 0.375rem; display: flex; gap: 0.25rem;
+        }
+        .preview-checkbox { position: absolute; top: 0.5rem; left: 0.5rem; width: 1rem; height: 1rem; accent-color: hsl(var(--primary)); cursor: pointer; z-index: 1; }
+        .preview-status {
+            position: absolute; top: 0.375rem; left: 50%; transform: translateX(-50%);
+            padding: 0.125rem 0.5rem; border-radius: 9999px; font-size: 0.625rem;
+            font-weight: 600; background: hsl(var(--success)); color: #fff;
+        }
+
+        /* ===== Progress ===== */
+        .progress {
+            display: none; align-items: center; gap: 0.5rem; margin-top: 1rem;
+            padding: 0.75rem 1rem; border-radius: var(--radius);
+            border: 1px solid hsl(var(--border)); background: hsl(var(--muted) / 0.5);
+            font-size: 0.875rem; color: hsl(var(--muted-foreground));
+        }
+        .progress.active { display: flex; }
+        .spinner {
+            width: 1rem; height: 1rem; border: 2px solid hsl(var(--border));
+            border-top-color: hsl(var(--primary)); border-radius: 50%;
+            animation: spin 0.7s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* ===== Toast ===== */
+        .toast-container {
+            position: fixed; top: 3rem; right: 1rem; z-index: 200;
+            display: flex; flex-direction: column; gap: 0.5rem;
+        }
+        .toast {
+            padding: 0.75rem 1rem; border-radius: var(--radius);
+            font-size: 0.875rem; font-weight: 500; color: #fff; max-width: 360px;
+            animation: toastIn 0.3s ease;
+            box-shadow: var(--shadow);
+        }
+        .toast.error { background: hsl(var(--destructive)); }
+        .toast.info { background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end)); }
+        .toast.warning { background: #f59e0b; color: #000; }
+        @keyframes toastIn { from { opacity: 0; transform: translateX(100%); } to { opacity: 1; transform: translateX(0); } }
+
+        /* ===== Expandable Card ===== */
+        .expandable-card { margin-bottom: 1rem; }
+        .expandable-trigger {
+            display: flex; align-items: center; justify-content: space-between;
+            width: 100%; padding: 1rem 1.5rem; border: 1px solid hsl(var(--border));
+            border-radius: var(--radius); background: hsl(var(--card));
+            color: hsl(var(--foreground)); font-size: 0.9375rem; font-weight: 600;
+            font-family: inherit; cursor: pointer; transition: all 0.15s ease;
+        }
+        .expandable-trigger:hover { background: hsl(var(--accent)); }
+        .expandable-trigger iconify-icon:last-child { transition: transform 0.2s ease; }
+        .expandable-card.open .expandable-trigger iconify-icon:last-child { transform: rotate(180deg); }
+        .expandable-content {
+            display: none; border: 1px solid hsl(var(--border)); border-top: 0;
+            border-radius: 0 0 var(--radius) var(--radius); background: hsl(var(--card));
+            padding: 1.25rem 1.5rem;
+        }
+        .expandable-card.open .expandable-content { display: block; }
+        .expandable-card.open .expandable-trigger { border-radius: var(--radius) var(--radius) 0 0; border-bottom: 0; }
+
+        /* ===== Base64 ===== */
+        .base64-tabs { display: flex; gap: 0; margin-bottom: 1rem; border-radius: var(--radius); overflow: hidden; border: 1px solid hsl(var(--border)); }
+        .base64-tab { flex: 1; padding: 0.5rem; text-align: center; border: none; background: hsl(var(--muted) / 0.5); cursor: pointer; font-family: inherit; font-size: 0.8125rem; font-weight: 500; color: hsl(var(--muted-foreground)); }
+        .base64-tab.active { background: hsl(var(--primary)); color: #fff; }
+        .base64-output { width: 100%; min-height: 120px; font-family: monospace; font-size: 0.75rem; padding: 0.75rem; border-radius: var(--radius); border: 1px solid hsl(var(--border)); resize: vertical; }
+        .base64-toggle { display: flex; align-items: center; gap: 0.5rem; }
+
+        /* ===== WASM Progress ===== */
+        .wasm-progress {
+            display: none; margin-top: 0.75rem;
+        }
+        .wasm-progress.active { display: block; }
+        .wasm-progress-bar {
+            height: 0.375rem; border-radius: 9999px; background: hsl(var(--muted));
+            overflow: hidden; margin-top: 0.25rem;
+        }
+        .wasm-progress-fill {
+            height: 100%; border-radius: 9999px;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            transition: width 0.3s ease; width: 0%;
+        }
+
+        /* ===== Results ===== */
+        .results-list { display: flex; flex-direction: column; gap: 0.5rem; }
+        .result-item {
+            display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+            padding: 0.625rem 0.75rem; border: 1px solid hsl(var(--border));
+            border-radius: var(--radius); background: hsl(var(--muted) / 0.3);
+            font-size: 0.8125rem;
+        }
+        .result-name { font-weight: 500; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .result-sizes { white-space: nowrap; flex-shrink: 0; color: hsl(var(--muted-foreground)); }
+        .result-savings { color: hsl(var(--success)); font-weight: 500; margin-left: 0.375rem; }
+
+        /* ===== SEO Section ===== */
+        .seo-section {
+            margin-top: 1.5rem; padding: 2rem 1.5rem;
+            background: hsl(var(--card)); border: 1px solid hsl(var(--border));
+            border-radius: calc(var(--radius) + 4px);
+            font-size: 0.875rem; color: hsl(var(--muted-foreground)); line-height: 1.7;
+        }
+        .seo-section h2 { font-size: 1.25rem; font-weight: 700; color: hsl(var(--foreground)); margin-bottom: 1rem; }
+        .seo-section h3 { font-size: 1rem; font-weight: 600; color: hsl(var(--foreground)); margin: 1.25rem 0 0.5rem; }
+        .seo-section p { margin-bottom: 0.75rem; }
+        .seo-section ul { padding-left: 1.25rem; margin-bottom: 0.75rem; }
+        .seo-section li + li { margin-top: 0.25rem; }
+        .seo-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        @media (max-width: 640px) { .seo-columns { grid-template-columns: 1fr; } }
+
+        /* ===== Cookie Consent ===== */
+        .cookie-bar {
+            position: fixed; bottom: 0; left: 0; right: 0; z-index: 150;
+            background: hsl(var(--card)); border-top: 1px solid hsl(var(--border));
+            padding: 0.75rem 1.5rem; display: flex; align-items: center;
+            justify-content: center; gap: 1rem; font-size: 0.8125rem;
+            color: hsl(var(--muted-foreground)); flex-wrap: wrap;
+            box-shadow: 0 -4px 16px rgba(0,0,0,0.08);
+        }
+        .cookie-bar.hidden { display: none; }
+
+        /* ===== Footer ===== */
+        .site-footer {
+            text-align: center; padding: 1.5rem; margin-top: 1rem;
+            border-top: 1px solid hsl(var(--border));
+            font-size: 0.75rem; color: hsl(var(--muted-foreground));
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 768px) {
+            .page-wrap { padding: 0.75rem; }
+            .hero { padding: 1.5rem 0.5rem 1rem; }
+            .hero h1 { font-size: 1.375rem; }
+            .card-header { flex-direction: column; align-items: stretch; }
+            .card-content { padding: 1rem; }
+            .card-header { padding: 1rem 1rem 0; }
+        }
+        @media (max-width: 480px) {
+            .format-pills { gap: 0.375rem; }
+            .format-pill { padding: 0.375rem 0.75rem; font-size: 0.8125rem; }
+            .preview { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); }
+        }
+
+        .hidden { display: none !important; }
+    </style>
+</head>
+<body>
+
+<!-- Privacy Banner -->
+<div class="privacy-banner">
+    <iconify-icon icon="lucide:shield-check" width="16" height="16"></iconify-icon>
+    图片仅在本地浏览器转换，不上传服务器、不存储任何数据
+</div>
+
+<div class="page-wrap">
+    <div class="main-col">
+
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-icon">
+                <iconify-icon icon="lucide:image-up" width="32" height="32"></iconify-icon>
+            </div>
+            <h1>图片格式在线转换工具</h1>
+            <p>免费、隐私安全、无限次使用。支持 JPG / PNG / WebP / AVIF / ICO 互转，HEIC 解码，批量处理，Base64 互转。</p>
+            <div class="badge-row">
+                <span class="badge"><iconify-icon icon="lucide:shield" width="14" height="14"></iconify-icon> 纯本地转换</span>
+                <span class="badge"><iconify-icon icon="lucide:zap" width="14" height="14"></iconify-icon> 极速处理</span>
+                <span class="badge"><iconify-icon icon="lucide:infinity" width="14" height="14"></iconify-icon> 无限次数</span>
+                <span class="badge"><iconify-icon icon="lucide:smartphone" width="14" height="14"></iconify-icon> 移动端适配</span>
+            </div>
+        </section>
+
+        <!-- Mobile Ad #1 -->
+        <div class="ad-unit ad-bottom hidden-desktop" style="margin-bottom:1rem;">
+            <span class="ad-label">广告</span>
+            广告位 — 移动端插屏 #1
+        </div>
+
+        <!-- Main Converter Card -->
+        <div class="card" id="mainCard">
+            <div class="card-header">
+                <div>
+                    <h2 class="card-title">
+                        <iconify-icon icon="lucide:refresh-cw" width="18" height="18"></iconify-icon>
+                        格式转换
+                    </h2>
+                    <p class="card-description">拖拽或点击上传图片，选择目标格式后一键转换</p>
+                </div>
+            </div>
+            <div class="card-content">
+                <div class="drop-zone" id="dropZone">
+                    <div class="drop-zone-icon">
+                        <iconify-icon icon="lucide:upload" width="40" height="40"></iconify-icon>
+                    </div>
+                    <p><strong>拖拽图片到此处</strong></p>
+                    <p>或点击选择文件</p>
+                    <p class="hint" id="acceptHint">支持所有常见图片格式</p>
+                    <input type="file" id="fileInput" hidden multiple accept="image/*,.heic,.heif">
+                </div>
+
+                <div class="format-section">
+                    <div class="format-section-label">
+                        <iconify-icon icon="lucide:file-output" width="14" height="14"></iconify-icon>
+                        目标格式
+                    </div>
+                    <div class="format-pills" id="formatPills">
+                        <button class="format-pill active" data-format="image/png">PNG</button>
+                        <button class="format-pill" data-format="image/jpeg">JPG</button>
+                        <button class="format-pill" data-format="image/webp">WebP</button>
+                        <button class="format-pill" data-format="image/avif">AVIF</button>
+                        <button class="format-pill" data-format="image/x-icon">ICO</button>
+                    </div>
+                </div>
+
+                <div class="quality-row">
+                    <span class="quality-label">
+                        <iconify-icon icon="lucide:sparkles" width="14" height="14"></iconify-icon>
+                        质量
+                    </span>
+                    <div class="custom-slider" id="quality" role="slider" aria-valuemin="1" aria-valuemax="100" aria-valuenow="90" tabindex="0">
+                        <div class="custom-slider-track">
+                            <div class="custom-slider-range" style="width:90%"></div>
+                            <div class="custom-slider-thumb" style="left:90%"></div>
+                        </div>
+                    </div>
+                    <span class="quality-value" id="qualityValue">90%</span>
+                </div>
+                <p class="file-size-hint">单张图片上限 10MB</p>
+
+                <div class="actions-bar">
+                    <button class="btn btn-primary btn-lg" type="button" id="convertBtn" disabled>
+                        <iconify-icon icon="lucide:refresh-cw" width="18" height="18"></iconify-icon>
+                        转换并下载
+                    </button>
+                    <button class="btn btn-success btn-lg hidden" type="button" id="downloadBtn">
+                        <iconify-icon icon="lucide:folder-down" width="18" height="18"></iconify-icon>
+                        下载全部
+                    </button>
+                </div>
+
+                <div class="progress" id="progress">
+                    <div class="spinner"></div>
+                    <span>正在转换中...</span>
+                </div>
+
+                <div class="preview" id="preview"></div>
+
+                <div id="resultsCard" class="hidden" style="margin-top:1rem;">
+                    <div style="font-weight:600;font-size:0.875rem;margin-bottom:0.5rem;">
+                        <iconify-icon icon="lucide:bar-chart-3" width="16" height="16"></iconify-icon>
+                        转换结果
+                    </div>
+                    <div class="results-list" id="resultsList"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Ad #2 -->
+        <div class="ad-unit ad-bottom hidden-desktop" style="margin-bottom:1rem;">
+            <span class="ad-label">广告</span>
+            广告位 — 移动端插屏 #2
+        </div>
+
+        <!-- Expandable: Batch -->
+        <div class="expandable-card" id="batchCard">
+            <button class="expandable-trigger" id="batchTrigger">
+                <span><iconify-icon icon="lucide:layers" width="18" height="18"></iconify-icon> 批量转换</span>
+                <iconify-icon icon="lucide:chevron-down" width="18" height="18"></iconify-icon>
+            </button>
+            <div class="expandable-content">
+                <p style="font-size:0.8125rem;color:hsl(var(--muted-foreground));margin-bottom:1rem;">
+                    支持多张图片拖拽上传，一键统一转为目标格式。转换完成后可单独下载或打包 ZIP 下载。一次性最多处理 10 张图片，确保转换速度。
+                </p>
+                <div class="drop-zone" id="batchDropZone" style="padding:1.5rem;">
+                    <div class="drop-zone-icon">
+                        <iconify-icon icon="lucide:upload" width="32" height="32"></iconify-icon>
+                    </div>
+                    <p><strong>拖拽多张图片</strong></p>
+                    <p>或点击批量选择</p>
+                    <input type="file" id="batchFileInput" hidden multiple accept="image/*,.heic,.heif">
+                </div>
+                <div class="format-section">
+                    <div class="format-section-label">统一转为</div>
+                    <div class="format-pills" id="batchFormatPills">
+                        <button class="format-pill active" data-format="image/png">PNG</button>
+                        <button class="format-pill" data-format="image/jpeg">JPG</button>
+                        <button class="format-pill" data-format="image/webp">WebP</button>
+                        <button class="format-pill" data-format="image/avif">AVIF</button>
+                        <button class="format-pill" data-format="image/x-icon">ICO</button>
+                    </div>
+                </div>
+                <div class="actions-bar">
+                    <button class="btn btn-primary btn-block" type="button" id="batchConvertBtn" disabled>
+                        <iconify-icon icon="lucide:refresh-cw" width="16" height="16"></iconify-icon>
+                        批量转换
+                    </button>
+                    <button class="btn btn-success btn-block hidden" type="button" id="batchDownloadBtn">
+                        <iconify-icon icon="lucide:folder-down" width="16" height="16"></iconify-icon>
+                        打包下载 (ZIP)
+                    </button>
+                </div>
+                <div class="progress" id="batchProgress">
+                    <div class="spinner"></div>
+                    <span id="batchProgressText">正在批量转换...</span>
+                </div>
+                <div class="preview" id="batchPreview"></div>
+                <div id="batchResultsCard" class="hidden" style="margin-top:1rem;">
+                    <div class="results-list" id="batchResultsList"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Expandable: Base64 -->
+        <div class="expandable-card" id="base64Card">
+            <button class="expandable-trigger" id="base64Trigger">
+                <span><iconify-icon icon="lucide:code-2" width="18" height="18"></iconify-icon> Base64 互转</span>
+                <iconify-icon icon="lucide:chevron-down" width="18" height="18"></iconify-icon>
+            </button>
+            <div class="expandable-content">
+                <p style="font-size:0.8125rem;color:hsl(var(--muted-foreground));margin-bottom:1rem;">
+                    图片与 Base64 编码双向转换，适合开发者快速生成 Data URL 或将 Base64 字符串还原为图片文件。所有转换均在本地完成。
+                </p>
+                <div class="base64-tabs">
+                    <button class="base64-tab active" data-mode="toBase64">图片 → Base64</button>
+                    <button class="base64-tab" data-mode="toImage">Base64 → 图片</button>
+                </div>
+
+                <div id="base64ToBase64">
+                    <div class="drop-zone" id="base64DropZone" style="padding:1.5rem;">
+                        <div class="drop-zone-icon">
+                            <iconify-icon icon="lucide:image" width="32" height="32"></iconify-icon>
+                        </div>
+                        <p><strong>上传图片</strong></p>
+                        <input type="file" id="base64FileInput" hidden accept="image/*,.heic,.heif">
+                    </div>
+                    <textarea class="base64-output hidden" id="base64Output" readonly placeholder="Base64 编码将显示在此处..."></textarea>
+                    <button class="btn btn-outline btn-block hidden" type="button" id="copyBase64Btn" style="margin-top:0.5rem;">
+                        <iconify-icon icon="lucide:copy" width="16" height="16"></iconify-icon>
+                        复制 Base64
+                    </button>
+                </div>
+
+                <div id="base64ToImage" class="hidden">
+                    <textarea class="base64-output" id="base64Input" placeholder="在此粘贴 Base64 字符串（可包含 data:image/...;base64, 前缀）"></textarea>
+                    <button class="btn btn-primary btn-block" type="button" id="decodeBase64Btn" style="margin-top:0.5rem;">
+                        <iconify-icon icon="lucide:download" width="16" height="16"></iconify-icon>
+                        解码并下载图片
+                    </button>
+                    <div style="text-align:center;margin-top:0.75rem;" id="base64PreviewWrap"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Expandable: HEIC -->
+        <div class="expandable-card" id="heicCard">
+            <button class="expandable-trigger" id="heicTrigger">
+                <span><iconify-icon icon="lucide:smartphone" width="18" height="18"></iconify-icon> HEIC 专项转换</span>
+                <iconify-icon icon="lucide:chevron-down" width="18" height="18"></iconify-icon>
+            </button>
+            <div class="expandable-content">
+                <p style="font-size:0.8125rem;color:hsl(var(--muted-foreground));margin-bottom:1rem;">
+                    专门针对苹果设备 HEIC/HEIF 照片格式转换，支持将 iPhone、iPad 拍摄的 HEIC 照片快速转为 JPG 或 PNG，无需安装任何软件。转换引擎按需加载，首次使用可能需要几秒钟。
+                </p>
+                <div class="drop-zone" id="heicDropZone" style="padding:1.5rem;">
+                    <div class="drop-zone-icon">
+                        <iconify-icon icon="lucide:phone" width="32" height="32"></iconify-icon>
+                    </div>
+                    <p><strong>上传 HEIC 照片</strong></p>
+                    <p>支持 .heic / .heif 格式</p>
+                    <input type="file" id="heicFileInput" hidden accept=".heic,.heif,image/heic,image/heif">
+                </div>
+                <div class="format-section">
+                    <div class="format-section-label">转为格式</div>
+                    <div class="format-pills" id="heicFormatPills">
+                        <button class="format-pill active" data-format="image/jpeg">JPG</button>
+                        <button class="format-pill" data-format="image/png">PNG</button>
+                    </div>
+                </div>
+                <div class="wasm-progress" id="heicWasmProgress">
+                    <span>正在加载 HEIC 解码引擎...</span>
+                    <div class="wasm-progress-bar">
+                        <div class="wasm-progress-fill" id="heicWasmFill"></div>
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-block" type="button" id="heicConvertBtn" disabled style="margin-top:0.75rem;">
+                    <iconify-icon icon="lucide:refresh-cw" width="16" height="16"></iconify-icon>
+                    转换并下载
+                </button>
+                <div style="text-align:center;margin-top:0.75rem;" id="heicPreviewWrap"></div>
+            </div>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="seo-section">
+            <h2>关于这款图片格式转换工具</h2>
+            <p>这是一款<strong>完全免费的在线图片格式转换工具</strong>，所有转换操作均在您的浏览器本地完成，<strong>不会上传任何图片到服务器</strong>。无论您需要将 PNG 转为 JPG、WebP 转为 PNG，还是将苹果 HEIC 照片转为 JPG，都可以在这里快速完成。</p>
+
+            <div class="seo-columns">
+                <div>
+                    <h3>为什么选择我们？</h3>
+                    <ul>
+                        <li><strong>隐私安全</strong>：图片仅在本地浏览器处理，不上传、不存储</li>
+                        <li><strong>完全免费</strong>：无次数限制、无水印、无需注册</li>
+                        <li><strong>格式全面</strong>：支持 JPG、PNG、WebP、AVIF、ICO、HEIC</li>
+                        <li><strong>批量处理</strong>：支持多张图片一次转换，打包下载</li>
+                        <li><strong>断网可用</strong>：首次加载后可离线使用</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>支持的转换场景</h3>
+                    <ul>
+                        <li>PNG 转 JPG — 减小文件体积</li>
+                        <li>WebP 转 PNG — 兼容更多平台</li>
+                        <li>HEIC 转 JPG — 苹果照片通用格式</li>
+                        <li>JPG 转 AVIF — 新一代图片格式</li>
+                        <li>PNG 转 ICO — 制作网站图标</li>
+                        <li>Base64 编码/解码 — 开发者工具</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>常见问题</h3>
+            <p><strong>Q：转换图片真的不会上传到服务器吗？</strong><br>A：是的。本工具使用浏览器 Canvas API 在本地完成所有转换，您的图片永远不会离开您的设备。您可以断开网络后继续使用，以验证这一点。</p>
+            <p><strong>Q：支持哪些图片格式？</strong><br>A：支持 JPG、PNG、WebP、AVIF、ICO 格式输出，以及 HEIC/HEIF 格式输入。其中 AVIF 需要现代浏览器支持（Chrome 85+、Firefox 93+）。</p>
+            <p><strong>Q：可以批量转换吗？</strong><br>A：可以。展开"批量转换"卡片，上传多张图片即可一键统一转换格式，支持单独下载或 ZIP 打包下载。</p>
+        </section>
+
+        <!-- Bottom Ad -->
+        <div class="ad-unit ad-bottom" style="margin-top:1rem;">
+            <span class="ad-label">广告</span>
+            广告位 — 底部横幅
+        </div>
+
+    </div><!-- /.main-col -->
+
+    <!-- Sidebar Ad (Desktop) -->
+    <aside class="ad-sidebar">
+        <div class="ad-sidebar-inner">
+            <div class="ad-unit" style="min-height:600px;">
+                <span class="ad-label">广告</span>
+                广告位 — 桌面侧边栏
+            </div>
+        </div>
+    </aside>
+
+</div><!-- /.page-wrap -->
+
+<!-- Cookie Consent -->
+<div class="cookie-bar" id="cookieBar">
+    <span>本网站使用 Cookie 仅用于广告展示和流量统计，不收集个人信息。<a href="https://policies.google.com/technologies/cookies" target="_blank" rel="noopener" style="color:hsl(var(--primary));">了解更多</a></span>
+    <button class="btn btn-primary btn-sm" id="cookieAcceptBtn">我知道了</button>
+</div>
+
+<!-- Footer -->
+<footer class="site-footer">
+    <p>&copy; <span id="footerYear"></span> 图片格式在线转换工具. 所有转换均在本地浏览器完成，零上传、零存储.</p>
+</footer>
+
+<!-- Toast Container -->
+<div class="toast-container" id="toastContainer"></div>
+
+<!-- Scripts -->
+<script src="https://code.iconify.design/iconify-icon/2.3.0/iconify-icon.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script>
+// ==================== UTILITIES ====================
+const $ = (s, p) => (p || document).querySelector(s);
+const $$ = (s, p) => Array.from((p || document).querySelectorAll(s));
+
+function formatFileSize(bytes) {
+    if (bytes < 1024) return `${bytes} B`;
+    if (bytes < 1048576) return `${(bytes / 1024).toFixed(1)} KB`;
+    return `${(bytes / 1048576).toFixed(2)} MB`;
+}
+
+function formatLabel(mime) {
+    const map = { 'image/png':'PNG', 'image/jpeg':'JPG', 'image/webp':'WebP', 'image/avif':'AVIF', 'image/x-icon':'ICO' };
+    return map[mime] || mime.split('/')[1]?.toUpperCase() || mime;
+}
+
+function fileNameToExt(name) {
+    return name.substring(name.lastIndexOf('.') + 1).toLowerCase();
+}
+
+// ==================== TOAST ====================
+function showToast(msg, type='info', duration=3000) {
+    const container = $('#toastContainer');
+    const el = document.createElement('div');
+    el.className = `toast ${type}`;
+    el.textContent = msg;
+    container.appendChild(el);
+    setTimeout(() => { el.style.opacity='0'; el.style.transition='opacity 0.3s'; setTimeout(() => el.remove(), 300); }, duration);
+}
+
+// ==================== COOKIE ====================
+if (localStorage.getItem('cookieAccepted')) {
+    $('#cookieBar').classList.add('hidden');
+}
+$('#cookieAcceptBtn').addEventListener('click', () => {
+    localStorage.setItem('cookieAccepted', '1');
+    $('#cookieBar').classList.add('hidden');
+});
+
+// ==================== EXPANDABLE CARDS ====================
+$$('.expandable-trigger').forEach(btn => {
+    btn.addEventListener('click', () => btn.closest('.expandable-card').classList.toggle('open'));
+});
+
+// ==================== FORMAT DETECTION ====================
+function supportsFormat(mime) {
+    if (mime === 'image/x-icon') return true; // we handle ICO manually
+    if (mime === 'image/avif') {
+        const c = document.createElement('canvas');
+        c.width = 1; c.height = 1;
+        return c.toBlob !== undefined && c.toDataURL('image/avif').startsWith('data:image/avif');
+    }
+    const c = document.createElement('canvas');
+    c.width = 1; c.height = 1;
+    try {
+        // Try toBlob support check
+        return c.toBlob !== undefined;
+    } catch(e) { return false; }
+}
+
+// Disable unsupported format pills
+function initFormatPills() {
+    const allPills = [...$$('.format-pill')];
+    allPills.forEach(pill => {
+        const fmt = pill.dataset.format;
+        if (fmt === 'image/avif' && !supportsFormat('image/avif')) {
+            pill.classList.add('disabled');
+            pill.title = '当前浏览器不支持 AVIF 格式';
+        }
+    });
+}
+
+// ==================== CUSTOM SLIDER ====================
+class CustomSlider {
+    constructor(root) {
+        this.root = root;
+        this._value = 90;
+        this.track = root.querySelector('.custom-slider-track');
+        this.range = root.querySelector('.custom-slider-range');
+        this.thumb = root.querySelector('.custom-slider-thumb');
+        this.bind();
+    }
+    get value() { return this._value; }
+    set value(v) { this._value = Math.min(100, Math.max(1, Math.round(v))); this.updateUI(); }
+    updateUI() {
+        this.range.style.width = this._value + '%';
+        this.thumb.style.left = this._value + '%';
+    }
+    bind() {
+        const onMove = (e) => {
+            const rect = this.track.getBoundingClientRect();
+            const ratio = Math.min(1, Math.max(0, (e.clientX - rect.left) / rect.width));
+            this.value = Math.round(ratio * 100);
+            this.root.dispatchEvent(new Event('input', { bubbles: true }));
+        };
+        this.track.addEventListener('pointerdown', (e) => {
+            if (e.button !== 0) return;
+            this.root.classList.add('dragging');
+            onMove(e);
+            const onUp = () => { this.root.classList.remove('dragging'); window.removeEventListener('pointermove', onMove); window.removeEventListener('pointerup', onUp); };
+            window.addEventListener('pointermove', onMove);
+            window.addEventListener('pointerup', onUp);
+        });
+    }
+}
+
+// ==================== FORMAT PILLS LOGIC ====================
+function setupPillGroup(containerId, onChange) {
+    const container = document.getElementById(containerId);
+    let active = container.querySelector('.format-pill.active');
+    container.addEventListener('click', (e) => {
+        const pill = e.target.closest('.format-pill');
+        if (!pill || pill.classList.contains('disabled')) return;
+        container.querySelectorAll('.format-pill').forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        active = pill;
+        if (onChange) onChange(pill.dataset.format, pill);
+    });
+    return {
+        get value() { return active ? active.dataset.format : 'image/png'; },
+        set value(fmt) {
+            const pill = container.querySelector(`[data-format="${fmt}"]`);
+            if (pill && !pill.classList.contains('disabled')) {
+                container.querySelectorAll('.format-pill').forEach(p => p.classList.remove('active'));
+                pill.classList.add('active');
+                active = pill;
+            }
+        }
+    };
+}
+
+// ==================== BASE64 TABS ====================
+$$('.base64-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+        $$('.base64-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const mode = tab.dataset.mode;
+        $('#base64ToBase64').classList.toggle('hidden', mode !== 'toBase64');
+        $('#base64ToImage').classList.toggle('hidden', mode !== 'toImage');
+    });
+});
+
+// ==================== MAIN CONVERTER ====================
+const MAX_SIZE = 10 * 1024 * 1024; // 10MB
+let selectedFiles = [];
+let previewUrls = [];
+let conversionResults = new Map();
+let pendingDownloads = [];
+
+// DOM refs
+const dropZone = $('#dropZone');
+const fileInput = $('#fileInput');
+const preview = $('#preview');
+const convertBtn = $('#convertBtn');
+const downloadBtn = $('#downloadBtn');
+const progress = $('#progress');
+const resultsCard = $('#resultsCard');
+const resultsList = $('#resultsList');
+const acceptHint = $('#acceptHint');
+const qualityValue = $('#qualityValue');
+
+const quality = new CustomSlider($('#quality'));
+$('#quality').addEventListener('input', () => { qualityValue.textContent = quality.value + '%'; });
+
+// Format pills
+const formatPills = setupPillGroup('formatPills');
+let targetFormat = 'image/png';
+formatPills; // keep reference
+
+// Track target format changes
+$('#formatPills').addEventListener('click', (e) => {
+    const pill = e.target.closest('.format-pill');
+    if (pill && !pill.classList.contains('disabled')) {
+        targetFormat = pill.dataset.format;
+        conversionResults.clear();
+        updateResults();
+    }
+});
+
+function getTargetFormat() {
+    const active = $('#formatPills .format-pill.active');
+    return active ? active.dataset.format : 'image/png';
+}
+
+function getConvertedFileName(file) {
+    const ext = getTargetFormat() === 'image/x-icon' ? 'ico' : getTargetFormat().split('/')[1];
+    return file.name.substring(0, file.name.lastIndexOf('.')) + '.' + ext;
+}
+
+function updateUploadActions() {
+    const has = selectedFiles.length > 0;
+    convertBtn.disabled = !has;
+    dropZone.classList.toggle('has-images', has);
+}
+
+function resetPending() {
+    pendingDownloads = [];
+    downloadBtn.classList.add('hidden');
+}
+
+// Drop zone
+dropZone.addEventListener('click', () => fileInput.click());
+dropZone.addEventListener('dragover', (e) => { e.preventDefault(); dropZone.classList.add('dragover'); });
+dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
+dropZone.addEventListener('drop', (e) => {
+    e.preventDefault(); e.stopPropagation();
+    dropZone.classList.remove('dragover');
+    handleFiles(e.dataTransfer.files);
+});
+fileInput.addEventListener('change', (e) => { handleFiles(e.target.files); fileInput.value = ''; });
+
+function handleFiles(files) {
+    const valid = [];
+    for (const f of Array.from(files)) {
+        if (f.size > MAX_SIZE) {
+            showToast(`"${f.name}" 超过 10MB 限制，请压缩后再上传`, 'error');
+            continue;
+        }
+        valid.push(f);
+    }
+    if (valid.length === 0) return;
+    selectedFiles = [...selectedFiles, ...valid];
+    conversionResults.clear();
+    resetPending();
+    updatePreview();
+    updateUploadActions();
+    updateResults();
+}
+
+function updatePreview() {
+    preview.innerHTML = '';
+    previewUrls = new Array(selectedFiles.length);
+    selectedFiles.forEach((file, index) => {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            previewUrls[index] = e.target.result;
+            const div = document.createElement('div');
+            div.className = 'preview-item';
+            div.dataset.index = index;
+            const result = conversionResults.get(index);
+            let sizeHtml = `<div class="preview-size">${formatFileSize(file.size)}</div>`;
+            if (result) {
+                const savings = file.size > result.size ? ` (−${Math.round((1 - result.size / file.size) * 100)}%)` : '';
+                sizeHtml = `<div class="preview-size">${formatFileSize(file.size)} → ${formatFileSize(result.size)}${savings}</div><div class="preview-size converted">已转换</div>`;
+            }
+            div.innerHTML = `
+                <img src="${e.target.result}" alt="${file.name}">
+                <div class="preview-actions">
+                    <button class="btn btn-success btn-sm btn-icon" title="转换并下载" data-action="single" data-index="${index}">
+                        <iconify-icon icon="lucide:download" width="14" height="14"></iconify-icon>
+                    </button>
+                    <button class="btn btn-outline btn-sm btn-icon" title="移除" data-action="remove" data-index="${index}">
+                        <iconify-icon icon="lucide:x" width="14" height="14"></iconify-icon>
+                    </button>
+                </div>
+                <div class="preview-meta">
+                    <div class="preview-name" title="${file.name}">${file.name}</div>
+                    ${sizeHtml}
+                </div>
+            `;
+            preview.appendChild(div);
+        };
+        reader.readAsDataURL(file);
+    });
+}
+
+preview.addEventListener('click', (e) => {
+    const btn = e.target.closest('button');
+    if (!btn) return;
+    const index = parseInt(btn.dataset.index);
+    if (btn.dataset.action === 'remove') {
+        selectedFiles.splice(index, 1);
+        conversionResults.clear();
+        resetPending();
+        updatePreview();
+        updateUploadActions();
+        updateResults();
+    } else if (btn.dataset.action === 'single') {
+        convertAndDownloadSingle(index);
+    }
+});
+
+function updateResults() {
+    if (conversionResults.size === 0) {
+        resultsCard.classList.add('hidden');
+        return;
+    }
+    resultsCard.classList.remove('hidden');
+    resultsList.innerHTML = '';
+    conversionResults.forEach((result, index) => {
+        const file = selectedFiles[index];
+        if (!file) return;
+        const savings = file.size > result.size
+            ? `<span class="result-savings">−${Math.round((1 - result.size / file.size) * 100)}%</span>`
+            : '';
+        const item = document.createElement('div');
+        item.className = 'result-item';
+        item.innerHTML = `
+            <span class="result-name" title="${file.name}">${file.name}</span>
+            <span class="result-sizes">${formatFileSize(file.size)} → ${formatFileSize(result.size)} ${savings}</span>
+        `;
+        resultsList.appendChild(item);
+    });
+}
+
+// ==================== CONVERSION ENGINE ====================
+async function convertImage(file, fmtOverride) {
+    const fmt = fmtOverride || getTargetFormat();
+    const qualityVal = quality.value / 100;
+
+    return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.onerror = () => reject(new Error('图片加载失败'));
+
+        img.onload = async () => {
+            try {
+                let blob;
+
+                if (fmt === 'image/x-icon') {
+                    blob = await createICOBlob(img);
+                } else if (fmt === 'image/avif' && !supportsFormat('image/avif')) {
+                    throw new Error('浏览器不支持 AVIF 格式');
+                } else {
+                    const canvas = document.createElement('canvas');
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+                    const ctx = canvas.getContext('2d', { alpha: true });
+
+                    if (fmt === 'image/jpeg') {
+                        ctx.fillStyle = '#FFFFFF';
+                        ctx.fillRect(0, 0, canvas.width, canvas.height);
+                    }
+
+                    ctx.drawImage(img, 0, 0);
+
+                    blob = await new Promise(r => {
+                        canvas.toBlob(b => r(b), fmt, qualityVal);
+                    });
+                }
+
+                URL.revokeObjectURL(img.src);
+                resolve({ blob, size: blob.size });
+            } catch (err) {
+                URL.revokeObjectURL(img.src);
+                reject(err);
+            }
+        };
+
+        img.src = URL.createObjectURL(file);
+    });
+}
+
+// ICO Encoder - generates multi-resolution ICO from image
+async function createICOBlob(img) {
+    const sizes = [16, 32, 48, 256];
+    const pngBlobs = [];
+
+    for (const size of sizes) {
+        const canvas = document.createElement('canvas');
+        canvas.width = size; canvas.height = size;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0, size, size);
+        const blob = await new Promise(r => canvas.toBlob(b => r(b), 'image/png'));
+        pngBlobs.push({ size, blob, data: new Uint8Array(await blob.arrayBuffer()) });
+    }
+
+    // Build ICO file
+    const imageCount = pngBlobs.length;
+    const headerSize = 6;
+    const dirEntrySize = 16;
+    const dirSize = imageCount * dirEntrySize;
+
+    let dataOffset = headerSize + dirSize;
+    const imageDatas = pngBlobs.map(p => {
+        const offset = dataOffset;
+        dataOffset += p.data.length;
+        return { ...p, offset };
+    });
+
+    const totalSize = dataOffset;
+    const buf = new ArrayBuffer(totalSize);
+    const view = new DataView(buf);
+    let pos = 0;
+
+    // ICO header
+    view.setUint16(pos, 0, true); pos += 2; // reserved
+    view.setUint16(pos, 1, true); pos += 2; // type: ICO
+    view.setUint16(pos, imageCount, true); pos += 2; // count
+
+    // Directory entries
+    for (const entry of imageDatas) {
+        const s = entry.size > 255 ? 0 : entry.size; // 0 means 256
+        view.setUint8(pos, s); pos += 1; // width
+        view.setUint8(pos, s); pos += 1; // height
+        view.setUint8(pos, 0); pos += 1; // palette colors
+        view.setUint8(pos, 0); pos += 1; // reserved
+        view.setUint16(pos, 1, true); pos += 2; // color planes
+        view.setUint16(pos, 32, true); pos += 2; // bits per pixel
+        view.setUint32(pos, entry.data.length, true); pos += 4; // image size
+        view.setUint32(pos, entry.offset, true); pos += 4; // image offset
+    }
+
+    // Image data
+    const u8 = new Uint8Array(buf);
+    for (const entry of imageDatas) {
+        u8.set(entry.data, entry.offset);
+    }
+
+    return new Blob([buf], { type: 'image/x-icon' });
+}
+
+async function convertAndDownloadSingle(index) {
+    try {
+        const file = selectedFiles[index];
+        const result = await convertImage(file);
+        conversionResults.set(index, result);
+        updatePreview();
+        updateResults();
+        downloadBlob(result.blob, getConvertedFileName(file));
+    } catch (err) {
+        showToast('转换失败: ' + err.message, 'error');
+    }
+}
+
+function downloadBlob(blob, fileName) {
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = fileName;
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+}
+
+async function convertAllFiles() {
+    const downloads = [];
+    for (let i = 0; i < selectedFiles.length; i++) {
+        const result = await convertImage(selectedFiles[i]);
+        conversionResults.set(i, result);
+        downloads.push({ blob: result.blob, fileName: getConvertedFileName(selectedFiles[i]) });
+    }
+    return downloads;
+}
+
+convertBtn.addEventListener('click', async () => {
+    progress.classList.add('active');
+    convertBtn.disabled = true;
+    try {
+        pendingDownloads = await convertAllFiles();
+        updatePreview();
+        updateResults();
+        downloadBtn.classList.remove('hidden');
+    } catch (err) {
+        showToast('转换失败: ' + err.message, 'error');
+    }
+    progress.classList.remove('active');
+    convertBtn.disabled = false;
+});
+
+downloadBtn.addEventListener('click', async () => {
+    if (pendingDownloads.length === 0) return;
+    downloadBtn.disabled = true;
+    try {
+        if (pendingDownloads.length === 1) {
+            downloadBlob(pendingDownloads[0].blob, pendingDownloads[0].fileName);
+        } else {
+            const zip = new JSZip();
+            pendingDownloads.forEach(d => zip.file(d.fileName, d.blob));
+            const zipBlob = await zip.generateAsync({ type: 'blob' });
+            downloadBlob(zipBlob, 'images-converted.zip');
+        }
+    } catch (err) {
+        showToast('下载失败: ' + err.message, 'error');
+    }
+    downloadBtn.disabled = false;
+});
+
+// ==================== BATCH CONVERTER ====================
+let batchFiles = [];
+const batchDropZone = $('#batchDropZone');
+const batchFileInput = $('#batchFileInput');
+const batchPreview = $('#batchPreview');
+const batchConvertBtn = $('#batchConvertBtn');
+const batchDownloadBtn = $('#batchDownloadBtn');
+const batchProgress = $('#batchProgress');
+const batchProgressText = $('#batchProgressText');
+const batchResultsCard = $('#batchResultsCard');
+const batchResultsList = $('#batchResultsList');
+
+const batchFormatPills = setupPillGroup('batchFormatPills');
+let batchResults = [];
+
+batchDropZone.addEventListener('click', () => batchFileInput.click());
+batchDropZone.addEventListener('dragover', (e) => { e.preventDefault(); batchDropZone.classList.add('dragover'); });
+batchDropZone.addEventListener('dragleave', () => batchDropZone.classList.remove('dragover'));
+batchDropZone.addEventListener('drop', (e) => {
+    e.preventDefault(); e.stopPropagation();
+    batchDropZone.classList.remove('dragover');
+    handleBatchFiles(e.dataTransfer.files);
+});
+batchFileInput.addEventListener('change', (e) => { handleBatchFiles(e.target.files); batchFileInput.value = ''; });
+
+function handleBatchFiles(files) {
+    const valid = [];
+    for (const f of Array.from(files)) {
+        if (f.size > MAX_SIZE) { showToast(`"${f.name}" 超过 10MB`, 'error'); continue; }
+        valid.push(f);
+    }
+    if (valid.length === 0) return;
+    batchFiles = [...batchFiles, ...valid].slice(0, 10);
+    batchResults = [];
+    renderBatchPreview();
+    batchConvertBtn.disabled = false;
+}
+
+function renderBatchPreview() {
+    batchPreview.innerHTML = '';
+    batchFiles.forEach((file, i) => {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            const div = document.createElement('div');
+            div.className = 'preview-item';
+            let sizeHtml = `<div class="preview-size">${formatFileSize(file.size)}</div>`;
+            if (batchResults[i]) {
+                sizeHtml = `<div class="preview-size">${formatFileSize(file.size)} → ${formatFileSize(batchResults[i].size)}</div>`;
+            }
+            div.innerHTML = `
+                <img src="${e.target.result}" alt="${file.name}">
+                <button class="btn btn-outline btn-sm btn-icon" style="position:absolute;top:0.375rem;right:0.375rem;" data-action="batch-remove" data-index="${i}">
+                    <iconify-icon icon="lucide:x" width="14" height="14"></iconify-icon>
+                </button>
+                <div class="preview-meta">
+                    <div class="preview-name" title="${file.name}">${file.name}</div>
+                    ${sizeHtml}
+                </div>
+            `;
+            batchPreview.appendChild(div);
+        };
+        reader.readAsDataURL(file);
+    });
+}
+
+batchPreview.addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-action="batch-remove"]');
+    if (btn) {
+        const i = parseInt(btn.dataset.index);
+        batchFiles.splice(i, 1); batchResults = [];
+        renderBatchPreview();
+        batchConvertBtn.disabled = batchFiles.length === 0;
+    }
+});
+
+function getBatchFormat() {
+    const active = $('#batchFormatPills .format-pill.active');
+    return active ? active.dataset.format : 'image/png';
+}
+
+batchConvertBtn.addEventListener('click', async () => {
+    batchProgress.classList.add('active');
+    batchConvertBtn.disabled = true;
+    batchResults = [];
+    const fmt = getBatchFormat();
+
+    try {
+        for (let i = 0; i < batchFiles.length; i++) {
+            batchProgressText.textContent = `正在转换 ${i + 1}/${batchFiles.length}...`;
+            const result = await convertImage(batchFiles[i], fmt);
+            batchResults[i] = result;
+        }
+        renderBatchPreview();
+        renderBatchResults();
+        batchDownloadBtn.classList.remove('hidden');
+    } catch (err) {
+        showToast('批量转换出错: ' + err.message, 'error');
+    }
+
+    batchProgress.classList.remove('active');
+    batchConvertBtn.disabled = false;
+});
+
+function renderBatchResults() {
+    batchResultsCard.classList.remove('hidden');
+    batchResultsList.innerHTML = '';
+    batchResults.forEach((result, i) => {
+        const file = batchFiles[i];
+        if (!file) return;
+        const savings = file.size > result.size
+            ? `<span class="result-savings">−${Math.round((1 - result.size / file.size) * 100)}%</span>` : '';
+        const ext = getBatchFormat() === 'image/x-icon' ? 'ico' : getBatchFormat().split('/')[1];
+        const newName = file.name.substring(0, file.name.lastIndexOf('.')) + '.' + ext;
+        const item = document.createElement('div');
+        item.className = 'result-item';
+        item.innerHTML = `
+            <span class="result-name" title="${newName}">${newName}</span>
+            <span class="result-sizes">${formatFileSize(file.size)} → ${formatFileSize(result.size)} ${savings}</span>
+        `;
+        batchResultsList.appendChild(item);
+    });
+}
+
+batchDownloadBtn.addEventListener('click', async () => {
+    if (batchResults.length === 0) return;
+    batchDownloadBtn.disabled = true;
+    try {
+        if (batchResults.length === 1) {
+            const ext = getBatchFormat() === 'image/x-icon' ? 'ico' : getBatchFormat().split('/')[1];
+            const name = batchFiles[0].name.substring(0, batchFiles[0].name.lastIndexOf('.')) + '.' + ext;
+            downloadBlob(batchResults[0].blob, name);
+        } else {
+            const zip = new JSZip();
+            const fmt = getBatchFormat();
+            const ext = fmt === 'image/x-icon' ? 'ico' : fmt.split('/')[1];
+            batchResults.forEach((result, i) => {
+                if (!result) return;
+                const name = batchFiles[i].name.substring(0, batchFiles[i].name.lastIndexOf('.')) + '.' + ext;
+                zip.file(name, result.blob);
+            });
+            const zipBlob = await zip.generateAsync({ type: 'blob' });
+            downloadBlob(zipBlob, 'batch-converted.zip');
+        }
+    } catch (err) {
+        showToast('下载失败: ' + err.message, 'error');
+    }
+    batchDownloadBtn.disabled = false;
+});
+
+// ==================== BASE64 CONVERTER ====================
+const base64DropZone = $('#base64DropZone');
+const base64FileInput = $('#base64FileInput');
+const base64Output = $('#base64Output');
+const copyBase64Btn = $('#copyBase64Btn');
+const base64Input = $('#base64Input');
+const decodeBase64Btn = $('#decodeBase64Btn');
+const base64PreviewWrap = $('#base64PreviewWrap');
+
+base64DropZone.addEventListener('click', () => base64FileInput.click());
+base64DropZone.addEventListener('dragover', (e) => { e.preventDefault(); base64DropZone.classList.add('dragover'); });
+base64DropZone.addEventListener('dragleave', () => base64DropZone.classList.remove('dragover'));
+base64DropZone.addEventListener('drop', (e) => {
+    e.preventDefault(); e.stopPropagation();
+    base64DropZone.classList.remove('dragover');
+    const file = e.dataTransfer.files[0];
+    if (file) encodeImageToBase64(file);
+});
+base64FileInput.addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    if (file) encodeImageToBase64(file);
+    base64FileInput.value = '';
+});
+
+function encodeImageToBase64(file) {
+    if (file.size > MAX_SIZE) { showToast('图片超过 10MB 限制', 'error'); return; }
+    const reader = new FileReader();
+    reader.onload = (e) => {
+        base64Output.value = e.target.result;
+        base64Output.classList.remove('hidden');
+        copyBase64Btn.classList.remove('hidden');
+    };
+    reader.readAsDataURL(file);
+}
+
+copyBase64Btn.addEventListener('click', async () => {
+    try {
+        await navigator.clipboard.writeText(base64Output.value);
+        showToast('已复制到剪贴板', 'info');
+    } catch {
+        base64Output.select();
+        showToast('请手动复制 (Ctrl+C)', 'warning');
+    }
+});
+
+decodeBase64Btn.addEventListener('click', () => {
+    let str = base64Input.value.trim();
+    if (!str) { showToast('请粘贴 Base64 字符串', 'error'); return; }
+    try {
+        // Strip data URI prefix if present
+        if (str.startsWith('data:')) {
+            str = str.substring(str.indexOf(',') + 1);
+        }
+        const byteChars = atob(str);
+        const bytes = new Uint8Array(byteChars.length);
+        for (let i = 0; i < byteChars.length; i++) bytes[i] = byteChars.charCodeAt(i);
+
+        // Detect MIME type from bytes
+        let ext = 'png';
+        if (bytes[0] === 0xFF && bytes[1] === 0xD8) ext = 'jpg';
+        else if (bytes[0] === 0x89 && bytes[1] === 0x50) ext = 'png';
+        else if (bytes[0] === 0x52 && bytes[1] === 0x49) ext = 'webp';
+        else if (bytes[0] === 0x00 && bytes[1] === 0x00) ext = 'ico';
+
+        const mimeMap = { jpg: 'image/jpeg', png: 'image/png', webp: 'image/webp', ico: 'image/x-icon' };
+        const blob = new Blob([bytes], { type: mimeMap[ext] || 'image/png' });
+        const url = URL.createObjectURL(blob);
+
+        base64PreviewWrap.innerHTML = `<img src="${url}" style="max-width:200px;border-radius:8px;" alt="preview"><p style="font-size:0.75rem;color:hsl(var(--muted-foreground));margin-top:0.5rem;">检测格式: ${ext.toUpperCase()}</p>`;
+        downloadBlob(blob, `decoded.${ext}`);
+        showToast('解码完成，正在下载', 'info');
+    } catch (err) {
+        showToast('无效的 Base64 字符串', 'error');
+    }
+});
+
+// ==================== HEIC CONVERTER ====================
+let heic2anyLib = null;
+let heicLoading = false;
+let heicLoaded = false;
+
+const heicDropZone = $('#heicDropZone');
+const heicFileInput = $('#heicFileInput');
+const heicConvertBtn = $('#heicConvertBtn');
+const heicPreviewWrap = $('#heicPreviewWrap');
+const heicWasmProgress = $('#heicWasmProgress');
+const heicWasmFill = $('#heicWasmFill');
+
+const heicFormatPills = setupPillGroup('heicFormatPills');
+
+let heicFile = null;
+
+heicDropZone.addEventListener('click', () => heicFileInput.click());
+heicDropZone.addEventListener('dragover', (e) => { e.preventDefault(); heicDropZone.classList.add('dragover'); });
+heicDropZone.addEventListener('dragleave', () => heicDropZone.classList.remove('dragover'));
+heicDropZone.addEventListener('drop', (e) => {
+    e.preventDefault(); e.stopPropagation();
+    heicDropZone.classList.remove('dragover');
+    const file = e.dataTransfer.files[0];
+    if (file) setHeicFile(file);
+});
+heicFileInput.addEventListener('change', (e) => {
+    if (e.target.files[0]) setHeicFile(e.target.files[0]);
+    heicFileInput.value = '';
+});
+
+function setHeicFile(file) {
+    const ext = fileNameToExt(file.name);
+    if (!['heic', 'heif'].includes(ext)) {
+        showToast('请上传 .heic 或 .heif 格式的文件', 'error');
+        return;
+    }
+    if (file.size > MAX_SIZE) { showToast('图片超过 10MB 限制', 'error'); return; }
+    heicFile = file;
+    heicConvertBtn.disabled = false;
+    heicPreviewWrap.innerHTML = `<p style="font-size:0.875rem;color:hsl(var(--muted-foreground));">${file.name} (${formatFileSize(file.size)})</p>`;
+}
+
+async function loadHeicLibrary() {
+    if (heicLoaded) return heic2anyLib;
+    if (heicLoading) {
+        // Wait for existing load
+        return new Promise((resolve, reject) => {
+            const check = setInterval(() => {
+                if (heicLoaded) { clearInterval(check); resolve(heic2anyLib); }
+            }, 200);
+        });
+    }
+    heicLoading = true;
+    heicWasmProgress.classList.add('active');
+    heicWasmFill.style.width = '30%';
+
+    try {
+        // Dynamic import of heic2any
+        const script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/heic2any@0.0.4/dist/heic2any.min.js';
+        await new Promise((resolve, reject) => {
+            script.onload = resolve;
+            script.onerror = () => reject(new Error('HEIC 解码库加载失败'));
+            document.head.appendChild(script);
+        });
+        heicWasmFill.style.width = '100%';
+        heic2anyLib = window.heic2any;
+        heicLoaded = true;
+        heicWasmProgress.classList.remove('active');
+        return heic2anyLib;
+    } catch (err) {
+        heicWasmProgress.classList.remove('active');
+        throw err;
+    } finally {
+        heicLoading = false;
+    }
+}
+
+heicConvertBtn.addEventListener('click', async () => {
+    if (!heicFile) return;
+    heicConvertBtn.disabled = true;
+
+    try {
+        await loadHeicLibrary();
+        const fmt = heicFormatPills.value;
+        const qualityVal = quality.value / 100;
+
+        const resultBlobs = await heic2anyLib({
+            blob: heicFile,
+            toType: fmt === 'image/png' ? 'image/png' : 'image/jpeg',
+            quality: qualityVal
+        });
+
+        const blob = Array.isArray(resultBlobs) ? resultBlobs[0] : resultBlobs;
+        const ext = fmt.split('/')[1];
+        const newName = heicFile.name.replace(/\.(heic|heif)$/i, '.' + ext);
+
+        const url = URL.createObjectURL(blob);
+        heicPreviewWrap.innerHTML = `<img src="${url}" style="max-width:200px;border-radius:8px;" alt="converted">`;
+
+        downloadBlob(blob, newName);
+        showToast('HEIC 转换完成！', 'info');
+    } catch (err) {
+        showToast('HEIC 转换失败: ' + (err.message || '未知错误'), 'error');
+    }
+
+    heicConvertBtn.disabled = false;
+});
+
+// ==================== PWA ====================
+let isOnline = navigator.onLine;
+
+function updateOnlineStatus() {
+    isOnline = navigator.onLine;
+    if (!isOnline) {
+        showToast('当前处于离线模式，已缓存的功能仍可正常使用', 'warning', 4000);
+    }
+}
+
+window.addEventListener('online', () => {
+    isOnline = true;
+    showToast('网络已恢复', 'info', 2000);
+});
+
+window.addEventListener('offline', () => {
+    isOnline = false;
+    showToast('网络已断开，切换到离线模式', 'warning', 4000);
+});
+
+// Register Service Worker
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js', { scope: './' })
+            .then((reg) => {
+                console.log('SW registered:', reg.scope);
+                // Check for updates
+                reg.addEventListener('updatefound', () => {
+                    const newWorker = reg.installing;
+                    if (newWorker) {
+                        newWorker.addEventListener('statechange', () => {
+                            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                showToast('有新版本可用，刷新页面即可更新', 'info', 5000);
+                            }
+                        });
+                    }
+                });
+            })
+            .catch((err) => console.log('SW registration failed:', err));
+    });
+}
+
+// ==================== INIT ====================
+function init() {
+    initFormatPills();
+    updateOnlineStatus();
+    $('#footerYear').textContent = new Date().getFullYear();
+
+    // Hide desktop ad sidebar label on mobile
+    if (window.innerWidth < 1024) {
+        $$('.hidden-desktop').forEach(el => el.classList.remove('hidden-desktop'));
+    }
+}
+
+init();
+
+// ==================== ANALYTICS (Cloudflare Web Analytics placeholder) ====================
+// Replace with your Cloudflare Web Analytics snippet after deployment:
+// <!-- Cloudflare Web Analytics -->
+// <script defer src='https://static.cloudflareinsights.com/beacon.min.js'
+//   data-cf-beacon='{"token": "YOUR_TOKEN_HERE"}'></script>
+</script>
+</body>
+</html>
