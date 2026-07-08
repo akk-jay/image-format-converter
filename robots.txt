@@ -1,1 +1,1 @@
-Sitemap: https://akk-jay.github.io/image-format-converter/sitemap.xml
+Sitemap: https://imgconv.net/sitemap.xml
